@@ -46,22 +46,48 @@
     .list li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);padding:10px 12px;border-radius:14px;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.06)}
     .badge{width:26px;height:26px;border-radius:10px;display:grid;place-items:center;background:rgba(229,22,43,.18);border:1px solid rgba(229,22,43,.35);flex:0 0 auto}
     @media(max-width:900px){.heroGrid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}nav ul{display:none}}
-  </style>
+  
+/* ===== Brand header: logo-only + call/quote ===== */
+.brandHeaderWrap{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  padding:8px 0;
+}
+.mainLogo{
+  width:min(620px, 92vw);
+  height:auto;
+  display:block;
+}
+.headerActions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+@media (max-width: 900px){
+  /* show buttons clearly on mobile */
+  .navRight{display:none !important;} /* just in case old layout remains */
+}
+
+</style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#top">
-        <div class="brandLogo"><img src="logo.png" alt="CT Automotive Keys logo"></div>
-        <div class="brandText">CT Automotive Keys<small>Mobile key replacement & programming • South Wales</small></div>
-      </a>
-      <nav><ul><li><a href="#services">Services</a></li><li><a href="#areas">Areas</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li></ul></nav>
-      <div class="navRight">
-        <a class="btn" href="tel:07447096864">📞 Call</a>
+  
+<header>
+  <div class="container nav" style="justify-content:center;">
+    <div class="brandHeaderWrap">
+      <img src="logo.png" alt="CT Automotive Keys" class="mainLogo">
+      <div class="headerActions">
+        <a class="btn ghost" href="tel:07447096864">📞 Call</a>
         <a class="btn primary" href="mailto:CTAutomotivekeys@gmail.com?subject=Quote%20Request%20-%20CT%20Automotive%20Keys">Get a Quote</a>
       </div>
     </div>
-  </header>
+  </div>
+</header>
+
 
   <main id="top">
     <div class="container hero">
